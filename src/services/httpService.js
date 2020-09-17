@@ -13,7 +13,7 @@ http.interceptors.request.use(config => {
   const state = store.getState();
   const token = `token ${state?.Auth?.token}`;
 
-  if (token) {
+  if (state?.Auth?.token) {
     config.headers.Authorization = token;
   }
 
